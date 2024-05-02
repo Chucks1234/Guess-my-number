@@ -32,11 +32,11 @@ public class GuessTheNumber : MonoBehaviour
         number = Random.Range(1, 11);
         //Debug.Log(number);
 
-        // Update guesses remaining
+        // Update guesses 
         numberOfGuesses = 3;
 
         // Update the header text 
-        ChangeHeader("I'm thinking of a number between 1 and 10.  You have 3 tries to guess.");
+        ChangeHeader("Please guess a number between 1 and 10.  You have 3 attempts to guess..");
 
         // Clear the text in the input field
         inputField.text = "";
@@ -53,15 +53,15 @@ public class GuessTheNumber : MonoBehaviour
             header.text = "Invalid input!";
             return;
         }
-        // Decrease remaining attempts
+        // Lower remaining attempts
         numberOfGuesses = numberOfGuesses - 1;
 
-        // Update header text if correct
+        // Update header text if right
         if (input == number)
         {
             header.text = "You won!";
         }
-        // Update header text if incorrect
+        // Update header text if wrong
         else if (numberOfGuesses > 0)
         {
             // Display try again
